@@ -1,4 +1,5 @@
 import { Author } from "../../../db/models/author.model.js";
+import { Book } from "../../../db/models/book.model.js";
 
 export const getAuthors = async (req, res) => {
   const { page } = req.query;
@@ -33,10 +34,21 @@ export const getAuthor = async (req, res) => {
 };
 
 export const createAuthor = async (req, res) => {
+  const { books } = req.body;
+  try {
+    const booksData = await Book.find({ _id: { $in: books } });
+    if (booksData.length !== books.length) {
+      return res.json({ message: "Invalid book ids" });
+    }
+  } catch (err) {
+    console.log(err);
+    return res.json({ message: "Error" });
+  }
   const requiredFields = ["name", "bio", "birthDate"];
   if (!requiredFields.every((field) => field in req.body)) {
     return res.json({ message: "Missing required fields", requiredFields });
   }
+
   try {
     const newAuthor = await Author.create(req.body);
     return res.json({ message: "Author added successfully", author: newAuthor });
