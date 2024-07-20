@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const db = mongoose
-  .connect("mongodb://localhost:27017/books")
+  .connect("mongodb://mongo:PTOroQZPhtPJxFZzWlCJyfViQxNuTdor@viaduct.proxy.rlwy.net:44882")
   .then(() => {
     console.log("Connected to MongoDB");
   })
