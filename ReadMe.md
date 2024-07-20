@@ -111,7 +111,7 @@ This application manages a collection of books and authors. It provides an API t
 
 4. 🧪 Testing the API with Postman
 
-   You can use the following Postman collection to test the API endpoints: **[Postman Collection](https://api.postman.com/collections/27734556-9d189f49-3e10-45e4-86cc-c43e65db01d8?access_key=PMAT-01J38MJT3KHTVA2B1GYJCVBT98)**.
+   You can use the following Postman collection to test the API endpoints: **[Postman Collection](https://documenter.getpostman.com/view/27734556/2sA3kUGhfM)**.
 
 ## 🎉 Conclusion
 
